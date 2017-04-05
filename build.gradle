@@ -1,0 +1,41 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.1'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    libraryName = 'AndroidUtils'
+    libraryDescription = 'Something simple usage utils for android development.'
+    libraryVersionName = '0.0.16'
+    libraryVersionCode = 16
+
+    groupId = 'me.pexcn'
+    artifactId = 'android-utils'
+
+    siteUrl = "https://github.com/pexcn/AndroidUtils"
+    gitUrl = "https://github.com/pexcn/AndroidUtils.git"
+
+    licenseName = 'The GNU General Public License v3.0'
+    licenseUrl = 'https://www.gnu.org/licenses/gpl-3.0.txt'
+    licenses = ["GPL-3.0"]
+
+    developerId = 'pexcn'
+    developerName = 'Xingyu Chen'
+    developerEmail = 'pexcn97@gmail.com'
+}
