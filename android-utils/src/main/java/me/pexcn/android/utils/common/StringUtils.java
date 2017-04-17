@@ -22,22 +22,4 @@ public class StringUtils {
         }
         return new String(chars);
     }
-
-    /**
-     * 字符串是否为空或者空串
-     *
-     * @param str 字符串
-     * @return 是否为空或空串
-     */
-    public static boolean isSpace(String str) {
-        if (str == null) {
-            return true;
-        }
-        for (int i = 0, len = str.length(); i < len; ++i) {
-            if (!Character.isWhitespace(str.charAt(i))) {
-                return false;
-            }
-        }
-        return true;
-    }
 }

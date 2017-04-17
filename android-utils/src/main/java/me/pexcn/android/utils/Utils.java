@@ -13,11 +13,8 @@ public class Utils {
     private static Utils sInstance;
     private static WeakReference<Application> sApplication;
 
-    private int mMemCacheSize;
-
     private Utils(Application app) {
         sApplication = new WeakReference<>(app);
-        setMemCacheSize((int) (Runtime.getRuntime().maxMemory() / 1024 / 8));
     }
 
     /**
@@ -49,14 +46,5 @@ public class Utils {
      */
     public static Utils getInstance() {
         return sInstance;
-    }
-
-    public Utils setMemCacheSize(int size) {
-        mMemCacheSize = size;
-        return this;
-    }
-
-    public int getMemCacheSize() {
-        return mMemCacheSize;
     }
 }
