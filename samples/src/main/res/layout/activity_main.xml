@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar_in_appbar" />
+
+        <Button
+            android:id="@+id/write_cache"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="写入缓存"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/read_cache"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="读取缓存"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/remove_cache"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="移除缓存"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

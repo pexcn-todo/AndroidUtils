@@ -1,4 +1,4 @@
-package me.pexcn.android.utils.common;
+package me.pexcn.android.utils.component;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;

@@ -1,4 +1,4 @@
-package me.pexcn.android.utils.common;
+package me.pexcn.android.utils.view;
 
 import me.pexcn.android.utils.Utils;
 

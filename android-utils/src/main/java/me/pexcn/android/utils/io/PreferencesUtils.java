@@ -1,4 +1,4 @@
-package me.pexcn.android.utils.common;
+package me.pexcn.android.utils.io;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;

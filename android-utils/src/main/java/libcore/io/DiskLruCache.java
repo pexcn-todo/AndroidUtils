@@ -982,7 +982,7 @@ public final class DiskLruCache implements Closeable {
         }
     }
 
-    private static String readFully(Reader reader) throws IOException {
+    public static String readFully(Reader reader) throws IOException {
         try {
             StringWriter writer = new StringWriter();
             char[] buffer = new char[1024];

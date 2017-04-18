@@ -4,7 +4,7 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import me.pexcn.android.utils.common.StringUtils;
+import me.pexcn.android.utils.type.StringUtils;
 
 /**
  * Created by pexcn on 2016-09-26.
