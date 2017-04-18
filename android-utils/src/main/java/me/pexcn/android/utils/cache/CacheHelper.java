@@ -19,6 +19,7 @@ import libcore.io.DiskLruCache;
 import me.pexcn.android.utils.Utils;
 import me.pexcn.android.utils.component.PackageUtils;
 import me.pexcn.android.utils.graphics.BitmapUtils;
+import me.pexcn.android.utils.io.IOUtils;
 
 /**
  * Created by pexcn on 2017-04-04.
@@ -88,13 +89,7 @@ public class CacheHelper {
             }
             e.printStackTrace();
         } finally {
-            if (os != null) {
-                try {
-                    os.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+            IOUtils.close(os);
         }
     }
 
@@ -117,16 +112,8 @@ public class CacheHelper {
             } catch (IOException e) {
                 e.printStackTrace();
             } finally {
-                try {
-                    is.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    baos.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                IOUtils.close(is);
+                IOUtils.close(baos);
             }
         }
         return baos.toByteArray();
@@ -159,20 +146,8 @@ public class CacheHelper {
             }
             e.printStackTrace();
         } finally {
-            if (os != null) {
-                try {
-                    os.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (bw != null) {
-                try {
-                    bw.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+            IOUtils.close(os);
+            IOUtils.close(bw);
         }
     }
 
@@ -190,11 +165,7 @@ public class CacheHelper {
             } catch (IOException e) {
                 e.printStackTrace();
             } finally {
-                try {
-                    is.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                IOUtils.close(is);
             }
         }
         return null;
@@ -247,20 +218,8 @@ public class CacheHelper {
             }
             e.printStackTrace();
         } finally {
-            if (os != null) {
-                try {
-                    os.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (oos != null) {
-                try {
-                    oos.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+            IOUtils.close(os);
+            IOUtils.close(oos);
         }
     }
 
@@ -281,18 +240,8 @@ public class CacheHelper {
             } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
             } finally {
-                if (ois != null) {
-                    try {
-                        ois.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                try {
-                    is.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                IOUtils.close(ois);
+                IOUtils.close(is);
             }
         }
         return object;

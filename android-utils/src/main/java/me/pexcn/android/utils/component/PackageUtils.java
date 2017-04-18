@@ -17,7 +17,7 @@ public class PackageUtils {
     /**
      * 获取当前版本的 Version Code
      *
-     * @return Version Code
+     * @return 版本号
      */
     public static int getVersionCode() {
         final Context context = Utils.getContext();
@@ -34,7 +34,7 @@ public class PackageUtils {
     /**
      * 获取当前版本的 Version Name
      *
-     * @return Version Name
+     * @return 版本名称
      */
     public static String getVersionName() {
         final Context context = Utils.getContext();

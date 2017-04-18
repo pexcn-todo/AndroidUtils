@@ -1,4 +1,4 @@
-package me.pexcn.android.utils.widget;
+package me.pexcn.android.utils.view;
 
 import android.support.annotation.ColorInt;
 import android.support.design.widget.Snackbar;

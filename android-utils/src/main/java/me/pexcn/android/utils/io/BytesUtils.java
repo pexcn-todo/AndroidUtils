@@ -4,7 +4,7 @@ package me.pexcn.android.utils.io;
  * Created by pexcn on 2016-09-27.
  */
 @SuppressWarnings("unused")
-public class StringUtils {
+public class BytesUtils {
     private final static char[] HEX = "0123456789abcdef".toCharArray();
 
     /**
@@ -13,7 +13,7 @@ public class StringUtils {
      * @param bytes Byte 数组
      * @return 十六进制字符串
      */
-    public static String bytesToHex(byte[] bytes) {
+    public static String bytes2Hex(byte[] bytes) {
         final char[] chars = new char[bytes.length * 2];
         for (int j = 0; j < bytes.length; j++) {
             int v = bytes[j] & 0xFF;

@@ -4,7 +4,7 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import me.pexcn.android.utils.io.StringUtils;
+import me.pexcn.android.utils.io.BytesUtils;
 
 /**
  * Created by pexcn on 2016-09-26.
@@ -24,7 +24,7 @@ public class MD5Utils {
         try {
             final MessageDigest md = MessageDigest.getInstance("MD5");
             final byte[] digest = md.digest(key.getBytes("UTF-8"));
-            return StringUtils.bytesToHex(digest);
+            return BytesUtils.bytes2Hex(digest);
         } catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
             e.printStackTrace();
         }

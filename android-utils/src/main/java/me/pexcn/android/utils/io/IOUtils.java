@@ -17,12 +17,12 @@ public class IOUtils {
      * @param closeable 可关闭的对象
      */
     public static void close(Closeable closeable) {
-        try {
-            if (closeable != null) {
+        if (closeable != null) {
+            try {
                 closeable.close();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 }
