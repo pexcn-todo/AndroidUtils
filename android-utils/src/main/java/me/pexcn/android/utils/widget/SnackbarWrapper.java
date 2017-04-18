@@ -9,7 +9,8 @@ import me.pexcn.android.utils.R;
 /**
  * Created by pexcn on 2016-09-21.
  */
-@SuppressWarnings({"unused", "WeakerAccess"})
+@SuppressWarnings({"WeakerAccess", "unused"})
+@Deprecated
 public class SnackbarWrapper {
     private Snackbar mSnackbar;
 

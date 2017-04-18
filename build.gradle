@@ -22,8 +22,8 @@ task clean(type: Delete) {
 ext {
     libraryName = 'AndroidUtils'
     libraryDescription = 'Something simple usage utils for android development.'
-    libraryVersionName = '0.1.1'
-    libraryVersionCode = 18
+    libraryVersionName = '0.1.2'
+    libraryVersionCode = 19
 
     groupId = 'me.pexcn'
     artifactId = 'android-utils'

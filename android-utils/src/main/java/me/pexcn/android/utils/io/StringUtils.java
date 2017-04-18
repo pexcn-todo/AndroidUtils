@@ -1,4 +1,4 @@
-package me.pexcn.android.utils.type;
+package me.pexcn.android.utils.io;
 
 /**
  * Created by pexcn on 2016-09-27.

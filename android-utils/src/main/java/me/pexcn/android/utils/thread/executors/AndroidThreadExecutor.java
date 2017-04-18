@@ -6,7 +6,7 @@ import java.lang.reflect.Method;
 import java.util.concurrent.Executor;
 
 /**
- * 这是一个 Android UI 线程的 Executor 实现
+ * 一个 Android UI 线程的 Executor 实现
  * Developer by @aa65535 https://github.com/aa65535/okhttputils/blob/f906431/src/main/java/utils/okhttp/utils/ThreadExecutor.java#L31-L55
  * <p>
  * Created by pexcn on 2016-09-20.

@@ -1,12 +1,15 @@
 package me.pexcn.android.utils.samples;
 
 import android.graphics.BitmapFactory;
+import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 
 import me.pexcn.android.base.ui.BaseActivity;
 import me.pexcn.android.utils.cache.CacheHelper;
 import me.pexcn.android.utils.encrypt.MD5Utils;
 import me.pexcn.android.utils.io.LogUtils;
+import me.pexcn.android.utils.widget.SnackbarUtils;
 
 public class MainActivity extends BaseActivity {
     private static final String STRING = "Android!";
@@ -53,6 +56,16 @@ public class MainActivity extends BaseActivity {
             public void onClick(View v) {
                 mCacheHelper.remove(KEY_STRING);
                 mCacheHelper.remove(KEY_BITMAP);
+            }
+        });
+
+        findViewById(R.id.show_snackbar).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar snackbar = Snackbar.make(findViewById(R.id.root_view), "SnackBar!", Snackbar.LENGTH_INDEFINITE);
+                SnackbarUtils.setBackgroundColor(snackbar, ContextCompat.getColor(MainActivity.this, R.color.colorAccent));
+                SnackbarUtils.setMessageColor(snackbar, ContextCompat.getColor(MainActivity.this, R.color.colorPrimaryDark));
+                snackbar.show();
             }
         });
     }
