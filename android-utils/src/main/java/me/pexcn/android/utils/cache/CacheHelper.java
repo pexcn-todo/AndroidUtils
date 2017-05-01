@@ -1,7 +1,7 @@
 package me.pexcn.android.utils.cache;
 
 import android.graphics.Bitmap;
-import android.os.Environment;
+import android.support.annotation.IntDef;
 
 import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
@@ -13,10 +13,11 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.nio.charset.Charset;
 
 import libcore.io.DiskLruCache;
-import me.pexcn.android.utils.Utils;
 import me.pexcn.android.utils.component.PackageUtils;
 import me.pexcn.android.utils.graphics.BitmapUtils;
 import me.pexcn.android.utils.io.IOUtils;
@@ -26,14 +27,10 @@ import me.pexcn.android.utils.io.IOUtils;
  */
 @SuppressWarnings({"WeakerAccess", "unused"})
 public class CacheHelper {
-    public static final long SIZE_SMALL = 16 * 1024 * 1024;
-    public static final long SIZE_MEDIUM = 64 * 1024 * 1024;
-    public static final long SIZE_LARGE = 128 * 1024 * 1024;
-
-    public static final String PATH_INTERNAL = Utils.getContext().getCacheDir().getAbsolutePath() + File.separator + "lru_cache";
-    @SuppressWarnings("ConstantConditions")
-    public static final String PATH_EXTERNAL = Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState()) || !Environment.isExternalStorageRemovable()
-            ? Utils.getContext().getExternalCacheDir().getAbsolutePath() + File.separator + "lru_cache" : PATH_INTERNAL;
+    @IntDef({CacheSize.SMALL, CacheSize.MEDIUM, CacheSize.LARGE})
+    @Retention(RetentionPolicy.SOURCE)
+    public @interface Size {
+    }
 
     private DiskLruCache mDiskLruCache;
 
@@ -41,18 +38,18 @@ public class CacheHelper {
      * 默认缓存文件目录为内部目录，最大缓存大小为 64 MB
      */
     public CacheHelper() {
-        mDiskLruCache = generateCache(PATH_INTERNAL, SIZE_MEDIUM);
+        mDiskLruCache = generateCache(CachePath.PATH_INTERNAL, CacheSize.MEDIUM);
     }
 
     public CacheHelper(String dir) {
-        mDiskLruCache = generateCache(dir, SIZE_MEDIUM);
+        mDiskLruCache = generateCache(dir, CacheSize.MEDIUM);
     }
 
-    public CacheHelper(String dir, long maxSize) {
+    public CacheHelper(String dir, @Size int maxSize) {
         mDiskLruCache = generateCache(dir, maxSize);
     }
 
-    private DiskLruCache generateCache(String dir, long maxSize) {
+    private DiskLruCache generateCache(String dir, @Size int maxSize) {
         File cacheDir = new File(dir);
         int appVersion = PackageUtils.getVersionCode();
         int valueCount = 1;

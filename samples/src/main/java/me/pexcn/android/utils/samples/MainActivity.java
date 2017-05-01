@@ -6,6 +6,8 @@ import android.support.v4.content.ContextCompat;
 
 import me.pexcn.android.base.ui.BaseActivity;
 import me.pexcn.android.utils.cache.CacheHelper;
+import me.pexcn.android.utils.cache.CachePath;
+import me.pexcn.android.utils.cache.CacheSize;
 import me.pexcn.android.utils.encrypt.MD5Utils;
 import me.pexcn.android.utils.io.LogUtils;
 import me.pexcn.android.utils.view.SnackbarUtils;
@@ -24,7 +26,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void init() {
-        mCacheHelper = new CacheHelper(CacheHelper.PATH_INTERNAL, CacheHelper.SIZE_SMALL);
+        mCacheHelper = new CacheHelper(CachePath.PATH_INTERNAL, CacheSize.SMALL);
 
         findViewById(R.id.write_cache).setOnClickListener(v -> {
             mCacheHelper.putString(KEY_STRING, STRING);
