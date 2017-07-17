@@ -19,7 +19,7 @@ import java.nio.charset.Charset;
 
 import libcore.io.DiskLruCache;
 import me.pexcn.android.utils.component.PackageUtils;
-import me.pexcn.android.utils.graphics.BitmapUtils;
+import me.pexcn.android.utils.graphics.ImageUtils;
 import me.pexcn.android.utils.io.IOUtils;
 
 /**
@@ -175,7 +175,7 @@ public class CacheHelper {
      * @param bitmap Bitmap 对象
      */
     public void putBitmap(String key, Bitmap bitmap) {
-        putBytes(key, BitmapUtils.bitmap2Bytes(bitmap));
+        putBytes(key, ImageUtils.bitmap2Bytes(bitmap));
     }
 
     /**
@@ -185,7 +185,7 @@ public class CacheHelper {
      * @return Bitmap 对象
      */
     public Bitmap getBitmap(String key) {
-        return BitmapUtils.bytes2Bitmap(getBytes(key));
+        return ImageUtils.bytes2Bitmap(getBytes(key));
     }
 
     /**
