@@ -11,10 +11,10 @@ import java.lang.ref.WeakReference;
 @SuppressWarnings({"WeakerAccess", "unused"})
 public class Utils {
     private static Utils sInstance;
-    private static WeakReference<Application> sApplication;
+    private static WeakReference<Application> sApp;
 
     private Utils(Application app) {
-        sApplication = new WeakReference<>(app);
+        sApp = new WeakReference<>(app);
     }
 
     /**
@@ -36,7 +36,7 @@ public class Utils {
      * @return Context 对象
      */
     public static Context getContext() {
-        return sApplication.get().getApplicationContext();
+        return sApp.get().getApplicationContext();
     }
 
     /**

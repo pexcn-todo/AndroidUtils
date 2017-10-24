@@ -1,4 +1,6 @@
-package me.pexcn.android.utils.view;
+package me.pexcn.android.utils.ui;
+
+import android.os.Looper;
 
 import me.pexcn.android.utils.Utils;
 
@@ -22,5 +24,14 @@ public class UIUtils {
             result = Utils.getContext().getResources().getDimensionPixelSize(resourceId);
         }
         return result;
+    }
+
+    /**
+     * 当前线程是否为 UI 线程
+     *
+     * @return 是否为 UI 线程
+     */
+    public static boolean isMainThread() {
+        return Looper.myLooper() == Looper.getMainLooper();
     }
 }

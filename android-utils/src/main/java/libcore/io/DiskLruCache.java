@@ -90,7 +90,14 @@ import java.util.regex.Pattern;
  * Callers should handle other problems by catching {@code IOException} and
  * responding appropriately.
  */
-@SuppressWarnings({"WeakerAccess", "unused", "ResultOfMethodCallIgnored", "StatementWithEmptyBody", "TryFinallyCanBeTryWithResources", "StringConcatenationInsideStringBufferAppend"})
+@SuppressWarnings({
+        "WeakerAccess",
+        "unused",
+        "ResultOfMethodCallIgnored",
+        "StatementWithEmptyBody",
+        "TryFinallyCanBeTryWithResources",
+        "StringConcatenationInsideStringBufferAppend"
+})
 public final class DiskLruCache implements Closeable {
     static final String JOURNAL_FILE = "journal";
     static final String JOURNAL_FILE_TEMP = "journal.tmp";

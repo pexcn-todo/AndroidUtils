@@ -1,16 +1,12 @@
-package me.pexcn.android.utils.graphics;
+package me.pexcn.android.utils.ui;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -21,8 +17,8 @@ import me.pexcn.android.utils.Utils;
  * Created by pexcn on 2017-07-17.
  */
 @SuppressWarnings({"WeakerAccess", "unused"})
-public class ImageUtils {
-    private ImageUtils() {
+public class MediaUtils {
+    private MediaUtils() {
     }
 
     /**
@@ -87,42 +83,6 @@ public class ImageUtils {
     }
 
     /**
-     * Bitmap 对象转字节数组
-     *
-     * @param bitmap Bitmap 对象
-     * @return 字节数组
-     */
-    public static byte[] bitmap2Bytes(Bitmap bitmap) {
-        final ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
-        return baos.toByteArray();
-    }
-
-    /**
-     * 字节数组转 Bitmap 对象
-     *
-     * @param bytes 字节数组
-     * @return Bitmap 对象
-     */
-    public static Bitmap bytes2Bitmap(byte[] bytes) {
-        return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-    }
-
-    /**
-     * 从 Uri 获取 Bitmap
-     *
-     * @return Bitmap 对象
-     */
-    public static Bitmap getBitmapFromUri(Uri uri) {
-        try {
-            return MediaStore.Images.Media.getBitmap(Utils.getContext().getContentResolver(), uri);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    /**
      * 把图片插入到系统图库
      *
      * @param uri 图片 Uri
@@ -132,16 +92,4 @@ public class ImageUtils {
         intent.setData(uri);
         Utils.getContext().sendBroadcast(intent);
     }
-
-//    public static Bitmap getCompressBitmap(String path) {
-//        final Bitmap bitmap = BitmapFactory.decodeFile(path);
-//        FileOutputStream fos = null;
-//        try {
-//            fos = new FileOutputStream("dist");
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//        bitmap.compress(Bitmap.CompressFormat.JPEG, 90, fos);
-//        return bitmap;
-//    }
 }

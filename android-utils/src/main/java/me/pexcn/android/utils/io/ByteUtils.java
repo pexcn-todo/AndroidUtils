@@ -1,10 +1,13 @@
 package me.pexcn.android.utils.io;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
 /**
  * Created by pexcn on 2016-09-27.
  */
 @SuppressWarnings("unused")
-public class BytesUtils {
+public class ByteUtils {
     private final static char[] HEX = "0123456789abcdef".toCharArray();
 
     /**
@@ -21,5 +24,15 @@ public class BytesUtils {
             chars[j * 2 + 1] = HEX[v & 0x0F];
         }
         return new String(chars);
+    }
+
+    /**
+     * 字节数组转 Bitmap 对象
+     *
+     * @param bytes 字节数组
+     * @return Bitmap 对象
+     */
+    public static Bitmap bytes2Bitmap(byte[] bytes) {
+        return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
     }
 }

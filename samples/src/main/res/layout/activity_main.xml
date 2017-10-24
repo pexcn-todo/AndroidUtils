@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/root_view"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:ignore="HardcodedText">
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -20,30 +21,19 @@
                 android:id="@+id/write_cache"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="写入缓存"
-                tools:ignore="HardcodedText" />
+                android:text="写入缓存" />
 
             <Button
                 android:id="@+id/read_cache"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="读取缓存"
-                tools:ignore="HardcodedText" />
+                android:text="读取缓存" />
 
             <Button
                 android:id="@+id/remove_cache"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="移除缓存"
-                tools:ignore="HardcodedText" />
-
-            <Button
-                android:id="@+id/show_snackbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="显示彩色 Snackbar"
-                android:textAllCaps="false"
-                tools:ignore="HardcodedText" />
+                android:text="移除缓存" />
 
         </LinearLayout>
 

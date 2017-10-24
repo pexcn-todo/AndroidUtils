@@ -18,9 +18,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.nio.charset.Charset;
 
 import libcore.io.DiskLruCache;
-import me.pexcn.android.utils.component.PackageUtils;
-import me.pexcn.android.utils.graphics.ImageUtils;
+import me.pexcn.android.utils.common.AppUtils;
+import me.pexcn.android.utils.io.ByteUtils;
 import me.pexcn.android.utils.io.IOUtils;
+import me.pexcn.android.utils.ui.BitmapUtils;
 
 /**
  * Created by pexcn on 2017-04-04.
@@ -51,7 +52,7 @@ public class CacheHelper {
 
     private DiskLruCache generateCache(String dir, @Size int maxSize) {
         File cacheDir = new File(dir);
-        int appVersion = PackageUtils.getVersionCode();
+        int appVersion = AppUtils.getVersionCode();
         int valueCount = 1;
         try {
             return DiskLruCache.open(cacheDir, appVersion, valueCount, maxSize);
@@ -175,7 +176,7 @@ public class CacheHelper {
      * @param bitmap Bitmap 对象
      */
     public void putBitmap(String key, Bitmap bitmap) {
-        putBytes(key, ImageUtils.bitmap2Bytes(bitmap));
+        putBytes(key, BitmapUtils.bitmap2Bytes(bitmap));
     }
 
     /**
@@ -185,7 +186,7 @@ public class CacheHelper {
      * @return Bitmap 对象
      */
     public Bitmap getBitmap(String key) {
-        return ImageUtils.bytes2Bitmap(getBytes(key));
+        return ByteUtils.bytes2Bitmap(getBytes(key));
     }
 
     /**
@@ -296,7 +297,7 @@ public class CacheHelper {
      * @param key 缓存的 Key
      * @return 是否已缓存
      */
-    public boolean cached(String key) {
+    public boolean isCached(String key) {
         return get(key) != null;
     }
 

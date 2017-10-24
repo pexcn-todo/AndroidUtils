@@ -1,4 +1,4 @@
-package me.pexcn.android.utils.component;
+package me.pexcn.android.utils.common;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;
@@ -10,8 +10,8 @@ import me.pexcn.android.utils.Utils;
  * Created by pexcn on 2016-09-26.
  */
 @SuppressWarnings("unused")
-public class PackageUtils {
-    private PackageUtils() {
+public class AppUtils {
+    private AppUtils() {
     }
 
     /**
