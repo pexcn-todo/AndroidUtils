@@ -15,11 +15,11 @@ public class PinyinUtils {
     /**
      * 获取汉字拼音的字符串形式
      *
-     * @param input 汉字的字符串形式
+     * @param chinese 汉字的字符串形式
      * @return 拼音的字符串形式
      */
-    public static String get(String input) {
-        final ArrayList<HanziToPinyin.Token> tokens = HanziToPinyin.getInstance().get(input);
+    public static String getPinyin(String chinese) {
+        final ArrayList<HanziToPinyin.Token> tokens = HanziToPinyin.getInstance().get(chinese);
         final StringBuilder sb = new StringBuilder();
         for (HanziToPinyin.Token token : tokens) {
             sb.append(token.target);
