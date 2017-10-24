@@ -44,7 +44,7 @@ public class UIUtils {
      * @return 像素
      */
     public static float dp2px(int dp) {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 14, Utils.getContext().getResources().getDisplayMetrics());
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, Utils.getContext().getResources().getDisplayMetrics());
     }
 
     /**
