@@ -1,6 +1,8 @@
 package me.pexcn.android.utils.ui;
 
 import android.os.Looper;
+import android.util.DisplayMetrics;
+import android.util.TypedValue;
 
 import me.pexcn.android.utils.Utils;
 
@@ -33,5 +35,25 @@ public class UIUtils {
      */
     public static boolean isMainThread() {
         return Looper.myLooper() == Looper.getMainLooper();
+    }
+
+    /**
+     * DIP 转 PX
+     *
+     * @param dp 密度
+     * @return 像素
+     */
+    public static float dp2px(int dp) {
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 14, Utils.getContext().getResources().getDisplayMetrics());
+    }
+
+    /**
+     * PX 转 DIP
+     *
+     * @param px 像素
+     * @return 密度
+     */
+    public static float px2dp(int px) {
+        return px / (Utils.getContext().getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
     }
 }
