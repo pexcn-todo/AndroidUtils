@@ -3,6 +3,10 @@ package me.pexcn.android.utils.ui;
 import android.os.Looper;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.View;
+import android.view.View.MeasureSpec;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 
 import me.pexcn.android.utils.Utils;
 
@@ -55,5 +59,23 @@ public class UIUtils {
      */
     public static float px2dp(int px) {
         return px / (Utils.getContext().getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
+    }
+
+    /**
+     * 获取 ListView 整体的高度
+     *
+     * @param listView ListView 对象
+     * @return ListView 高度
+     */
+    public static int getListViewHeight(ListView listView) {
+        int totalHeight = 0;
+        ListAdapter adapter = listView.getAdapter();
+        for (int i = 0; i < adapter.getCount(); i++) {
+            View item = adapter.getView(i, null, listView);
+            item.measure(MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
+            int itemHeight = item.getMeasuredHeight() + listView.getDividerHeight();
+            totalHeight += itemHeight;
+        }
+        return totalHeight;
     }
 }
