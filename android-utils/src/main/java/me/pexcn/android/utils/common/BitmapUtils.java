@@ -12,6 +12,7 @@ import me.pexcn.android.utils.Utils;
 /**
  * Created by pexcn on 2017-10-24.
  */
+@SuppressWarnings("unused")
 public class BitmapUtils {
     private BitmapUtils(){}
 

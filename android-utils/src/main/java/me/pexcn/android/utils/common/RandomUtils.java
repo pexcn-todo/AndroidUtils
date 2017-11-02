@@ -8,6 +8,7 @@ import java.util.concurrent.ThreadLocalRandom;
 /**
  * Created by pexcn on 2017-10-24.
  */
+@SuppressWarnings("unused")
 public class RandomUtils {
     private RandomUtils() {
     }

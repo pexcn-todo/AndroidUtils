@@ -11,6 +11,7 @@ import me.pexcn.android.utils.Utils;
 /**
  * Created by pexcn on 2017-10-31.
  */
+@SuppressWarnings("unused")
 public class ResourcesUtils {
     private ResourcesUtils() {
     }

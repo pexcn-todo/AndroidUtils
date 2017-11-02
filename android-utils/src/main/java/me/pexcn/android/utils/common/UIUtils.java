@@ -1,8 +1,5 @@
 package me.pexcn.android.utils.common;
 
-import android.os.Looper;
-import android.util.DisplayMetrics;
-import android.util.TypedValue;
 import android.view.View;
 import android.view.View.MeasureSpec;
 import android.widget.ListAdapter;
@@ -30,35 +27,6 @@ public class UIUtils {
             result = Utils.getContext().getResources().getDimensionPixelSize(resourceId);
         }
         return result;
-    }
-
-    /**
-     * 当前线程是否为 UI 线程
-     *
-     * @return 是否为 UI 线程
-     */
-    public static boolean isMainThread() {
-        return Looper.myLooper() == Looper.getMainLooper();
-    }
-
-    /**
-     * DIP 转 PX
-     *
-     * @param dp 密度
-     * @return 像素
-     */
-    public static float dp2px(int dp) {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, Utils.getContext().getResources().getDisplayMetrics());
-    }
-
-    /**
-     * PX 转 DIP
-     *
-     * @param px 像素
-     * @return 密度
-     */
-    public static float px2dp(int px) {
-        return px / (Utils.getContext().getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
     }
 
     /**
