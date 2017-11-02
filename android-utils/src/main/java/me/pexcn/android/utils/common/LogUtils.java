@@ -2,98 +2,83 @@ package me.pexcn.android.utils.common;
 
 import android.util.Log;
 
+import me.pexcn.android.utils.Utils;
+
 /**
  * Created by pexcn on 2016-09-21.
  */
 @SuppressWarnings("unused")
 public class LogUtils {
     private static boolean DEBUG = true;
-    private static String TAG = LogUtils.class.getSimpleName();
+    private static Utils TAG = Utils.getInstance();
 
     private LogUtils() {
     }
 
-    /**
-     * Log.v()
-     *
-     * @param msg 字符串形式的日志
-     */
-    public static void v(String msg) {
-        if (DEBUG) {
-            Log.v(TAG, msg);
-        }
-    }
-
-    /**
-     * Log.d()
-     *
-     * @param msg 字符串形式的日志
-     */
-    public static void d(String msg) {
-        if (DEBUG) {
-            Log.d(TAG, msg);
-        }
-    }
-
-    /**
-     * Log.i()
-     *
-     * @param msg 字符串形式的日志
-     */
-    public static void i(String msg) {
-        if (DEBUG) {
-            Log.i(TAG, msg);
-        }
-    }
-
-    /**
-     * Log.w()
-     *
-     * @param msg 字符串形式的日志
-     */
-    public static void w(String msg) {
-        if (DEBUG) {
-            Log.w(TAG, msg);
-        }
-    }
-
-    /**
-     * Log.e()
-     *
-     * @param msg 字符串形式的日志
-     */
-    public static void e(String msg) {
-        if (DEBUG) {
-            Log.e(TAG, msg);
-        }
-    }
-
-    /**
-     * Log.wtf()
-     *
-     * @param msg 字符串形式的日志
-     */
-    public static void wtf(String msg) {
-        if (DEBUG) {
-            Log.wtf(TAG, msg);
-        }
-    }
-
-    /**
-     * 设置是否开启日志
-     *
-     * @param debugable 是否开启日志
-     */
     public static void setDebug(boolean debugable) {
         DEBUG = debugable;
     }
 
-    /**
-     * 设置日志标签
-     *
-     * @param tag 日志标签
-     */
-    public static void setTag(String tag) {
-        TAG = tag;
+    public static void v(String msg) {
+        log(TAG, msg, Log.VERBOSE);
+    }
+
+    public static void d(String msg) {
+        log(TAG, msg, Log.DEBUG);
+    }
+
+    public static void i(String msg) {
+        log(TAG, msg, Log.INFO);
+    }
+
+    public static void w(String msg) {
+        log(TAG, msg, Log.WARN);
+    }
+
+    public static void e(String msg) {
+        log(TAG, msg, Log.ERROR);
+    }
+
+    public static <T> void v(T type, String msg) {
+        log(type, msg, Log.VERBOSE);
+    }
+
+    public static <T> void d(T type, String msg) {
+        log(type, msg, Log.DEBUG);
+    }
+
+    public static <T> void i(T type, String msg) {
+        log(type, msg, Log.INFO);
+    }
+
+    public static <T> void w(T type, String msg) {
+        log(type, msg, Log.WARN);
+    }
+
+    public static <T> void e(T type, String msg) {
+        log(type, msg, Log.ERROR);
+    }
+
+    private static <T> void log(T type, String msg, int level) {
+        if (DEBUG) {
+            String tag = type.getClass().getSimpleName();
+            switch (level) {
+                case Log.ERROR:
+                    Log.e(tag, msg);
+                    break;
+                case Log.INFO:
+                    Log.i(tag, msg);
+                    break;
+                case Log.VERBOSE:
+                    Log.v(tag, msg);
+                    break;
+                case Log.WARN:
+                    Log.w(tag, msg);
+                    break;
+                case Log.DEBUG:
+                    Log.d(tag, msg);
+                    break;
+            }
+        }
     }
 }
