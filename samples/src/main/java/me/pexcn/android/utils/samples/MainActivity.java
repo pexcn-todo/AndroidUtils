@@ -4,13 +4,11 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import me.pexcn.android.utils.common.ToastUtils;
-
 /**
  * Created by pexcn on 2017-04-18.
  */
 public class MainActivity extends AppCompatActivity {
-    private int mInt = 0;
+    boolean debug = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -21,11 +19,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void init() {
         findViewById(R.id.show).setOnClickListener(view -> {
-            ToastUtils.show("Toast: " + ++mInt);
+
         });
 
         findViewById(R.id.cancel).setOnClickListener(view -> {
-            ToastUtils.cancel();
+
         });
     }
 }
