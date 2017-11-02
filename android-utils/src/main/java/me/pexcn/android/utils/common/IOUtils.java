@@ -1,4 +1,4 @@
-package me.pexcn.android.utils.io;
+package me.pexcn.android.utils.common;
 
 import java.io.Closeable;
 import java.io.IOException;

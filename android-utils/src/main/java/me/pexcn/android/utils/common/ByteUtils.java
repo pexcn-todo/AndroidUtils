@@ -1,4 +1,4 @@
-package me.pexcn.android.utils.io;
+package me.pexcn.android.utils.common;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

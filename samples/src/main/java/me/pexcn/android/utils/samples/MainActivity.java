@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import me.pexcn.android.utils.ui.ToastUtils;
+import me.pexcn.android.utils.common.ToastUtils;
 
 /**
  * Created by pexcn on 2017-04-18.

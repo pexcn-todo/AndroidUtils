@@ -1,4 +1,4 @@
-package me.pexcn.android.utils.ui;
+package me.pexcn.android.utils.common;
 
 import android.graphics.Bitmap;
 import android.net.Uri;
